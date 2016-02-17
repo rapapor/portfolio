@@ -158,12 +158,15 @@
         {% block news %}
 
 
-        {% for tekst in news %}
+
     <div class="col-md-4">
         <div class="panel panel-default">
+
             <div class="panel-heading">
-                <h4><i class="glyphicon glyphicon-pencil"></i>{{ tekst.title }} {{ tekst.created_date|date:"Y.m.d H:i" }}</h4>
+
+                <h4><i class="glyphicon glyphicon-pencil"></i>News</h4>
             </div>
+            {% for tekst in news %}
             <div class="panel-body">
 
                 <table>
@@ -171,7 +174,7 @@
 
                         <tr>
 
-                            <td>{{ tekst.text }}</td>
+                            <td><b>{{ tekst.title }}</b> {{ tekst.created_date|date:"Y.m.d H:i" }}<br>{{ tekst.text }}</td>
 
 
                         </tr>
@@ -181,9 +184,11 @@
 
 
                 </div>
+{% endfor %}
             </div>
+
         </div>
-        {% endfor %}
+
 
 
         {% endblock news %}
